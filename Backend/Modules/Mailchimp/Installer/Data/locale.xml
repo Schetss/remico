@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Mailchimp>
+			<item type="label" name="AddMailchimp">
+				<translation language="nl"><![CDATA[Mailchimp toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Mailchimp]]></translation>
+			</item>
+		</Mailchimp>
+		<Core>
+			<item type="label" name="Mailchimp">
+				<translation language="nl"><![CDATA[Mailchimp]]></translation>
+				<translation language="en"><![CDATA[Mailchimp]]></translation>
+			</item>
+			<item type="label" name="MailchimpDetail">
+				<translation language="nl"><![CDATA[Mailchimp detail]]></translation>
+				<translation language="en"><![CDATA[Mailchimp detail]]></translation>
+			</item>
+			<item type="label" name="MailchimpCategory">
+				<translation language="nl"><![CDATA[Mailchimp categorie]]></translation>
+				<translation language="en"><![CDATA[Mailchimp category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>
