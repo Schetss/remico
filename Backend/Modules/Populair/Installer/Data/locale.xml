@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Populair>
+			<item type="label" name="AddPopulair">
+				<translation language="nl"><![CDATA[Populair toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Populair]]></translation>
+			</item>
+		</Populair>
+		<Core>
+			<item type="label" name="Populair">
+				<translation language="nl"><![CDATA[Populair]]></translation>
+				<translation language="en"><![CDATA[Populair]]></translation>
+			</item>
+			<item type="label" name="PopulairDetail">
+				<translation language="nl"><![CDATA[Populair detail]]></translation>
+				<translation language="en"><![CDATA[Populair detail]]></translation>
+			</item>
+			<item type="label" name="PopulairCategory">
+				<translation language="nl"><![CDATA[Populair categorie]]></translation>
+				<translation language="en"><![CDATA[Populair category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

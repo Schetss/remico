@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Kopenverkopen>
+			<item type="label" name="AddKopenverkopen">
+				<translation language="nl"><![CDATA[kopenverkopen toevoegen]]></translation>
+				<translation language="en"><![CDATA[add kopenverkopen]]></translation>
+			</item>
+		</Kopenverkopen>
+		<Core>
+			<item type="label" name="Kopenverkopen">
+				<translation language="nl"><![CDATA[kopenverkopen]]></translation>
+				<translation language="en"><![CDATA[kopenverkopen]]></translation>
+			</item>
+			<item type="label" name="KopenverkopenDetail">
+				<translation language="nl"><![CDATA[kopenverkopen detail]]></translation>
+				<translation language="en"><![CDATA[kopenverkopen detail]]></translation>
+			</item>
+			<item type="label" name="KopenverkopenCategory">
+				<translation language="nl"><![CDATA[kopenverkopen categorie]]></translation>
+				<translation language="en"><![CDATA[kopenverkopen category]]></translation>
+			</item>
+			<item type="label" name="KopenverkopenWidgey">
+				<translation language="nl"><![CDATA[Kopen - Verkopen Widget]]></translation>
+				<translation language="en"><![CDATA[Kopen - Verkopen Widget]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>
