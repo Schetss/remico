@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<ZoekenKlein>
+			<item type="label" name="AddZoekenKlein">
+				<translation language="nl"><![CDATA[Zoeken Klein toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Zoeken Klein]]></translation>
+			</item>
+		</ZoekenKlein>
+		<Core>
+			<item type="label" name="ZoekenKlein">
+				<translation language="nl"><![CDATA[Zoeken Klein]]></translation>
+				<translation language="en"><![CDATA[Zoeken Klein]]></translation>
+			</item>
+			<item type="label" name="ZoekenKleinDetail">
+				<translation language="nl"><![CDATA[Zoeken Klein detail]]></translation>
+				<translation language="en"><![CDATA[Zoeken Klein detail]]></translation>
+			</item>
+			<item type="label" name="ZoekenKleinCategory">
+				<translation language="nl"><![CDATA[Zoeken Klein categorie]]></translation>
+				<translation language="en"><![CDATA[Zoeken Klein category]]></translation>
+			</item>
+			<item type="label" name="ZoekenHome">
+				<translation language="nl"><![CDATA[Zoekfunctie home]]></translation>
+				<translation language="en"><![CDATA[Zoekfunctie home]]></translation>
+			</item>
+			<item type="label" name="ZoekenHomeWidget">
+				<translation language="nl"><![CDATA[Zoekfunctie home]]></translation>
+				<translation language="en"><![CDATA[Zoekfunctie home]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

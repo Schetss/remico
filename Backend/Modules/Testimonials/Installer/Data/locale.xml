@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Testimonials>
+			<item type="label" name="AddTestimonials">
+				<translation language="nl"><![CDATA[Testimonials toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Testimonials]]></translation>
+			</item>
+		</Testimonials>
+		<Core>
+			<item type="label" name="Testimonials">
+				<translation language="nl"><![CDATA[Testimonials]]></translation>
+				<translation language="en"><![CDATA[Testimonials]]></translation>
+			</item>
+			<item type="label" name="TestimonialsDetail">
+				<translation language="nl"><![CDATA[Testimonials detail]]></translation>
+				<translation language="en"><![CDATA[Testimonials detail]]></translation>
+			</item>
+			<item type="label" name="TestimonialsCategory">
+				<translation language="nl"><![CDATA[Testimonials categorie]]></translation>
+				<translation language="en"><![CDATA[Testimonials category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

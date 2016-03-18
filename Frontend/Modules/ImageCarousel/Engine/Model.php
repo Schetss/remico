@@ -92,4 +92,33 @@ class Model
         );
     }
 
+    /**
+     * Get alle the images
+     *
+     * @return int
+     */
+    public static function getAllImageCarousel()
+    {
+        $return = (array) FrontendModel::get('database')->getRecords(
+               'SELECT id, titel AS title, afbeelding as image
+                FROM image_carousel 
+                WHERE publiceren = TRUE
+                ORDER BY sequence LIMIT 4;
+                ',
+                array(),
+                'id'
+            );
+
+            // loop items and unserialize
+            foreach ($return as &$row) {
+                if (isset($row['meta_data'])) {
+                    $row['meta_data'] = unserialize($row['meta_data']);
+                }
+            }
+
+            return $return;
+    }
+
+    
+
 }

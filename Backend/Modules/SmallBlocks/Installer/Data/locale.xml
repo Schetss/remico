@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<SmallBlocks>
+			<item type="label" name="AddSmallBlocks">
+				<translation language="nl"><![CDATA[Small blocks toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Small blocks]]></translation>
+			</item>
+		</SmallBlocks>
+		<Core>
+			<item type="label" name="SmallBlocks">
+				<translation language="nl"><![CDATA[Small blocks]]></translation>
+				<translation language="en"><![CDATA[Small blocks]]></translation>
+			</item>
+			<item type="label" name="SmallBlocksDetail">
+				<translation language="nl"><![CDATA[Small blocks detail]]></translation>
+				<translation language="en"><![CDATA[Small blocks detail]]></translation>
+			</item>
+			<item type="label" name="SmallBlocksCategory">
+				<translation language="nl"><![CDATA[Small blocks categorie]]></translation>
+				<translation language="en"><![CDATA[Small blocks category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

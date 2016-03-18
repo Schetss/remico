@@ -6,16 +6,6 @@
 *}
 
 	<div class="wrapper-inner">
-		<div class="grid block-title block">
-			<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
-				<h1>Populaire regio's</h1>
-				<p>De meest geliefde regio's van onze klanten</p>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-
-	<div class="wrapper-inner">
 		<div class="grid regio block">
 			<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
 				{option:widgetPopulairRegio1}

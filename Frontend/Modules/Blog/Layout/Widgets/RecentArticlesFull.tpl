@@ -4,15 +4,7 @@
 *}
 
 {option:widgetBlogRecentArticlesFull}
-		<div class="wrapper-inner">
-			<div class="grid block-title block">
-				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
-					<h1>Blijf op de hoogte</h1>
-					<p>Steeds recente en relevante sectorinformatie.</p>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
+		
 		<div class="blog-widget">
 			<div class="wrapper-inner">
 	    	{iteration:widgetBlogRecentArticlesFull}

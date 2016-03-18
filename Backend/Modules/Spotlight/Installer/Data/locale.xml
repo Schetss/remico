@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Spotlight>
+			<item type="label" name="AddSpotlight">
+				<translation language="nl"><![CDATA[Spotlight toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Spotlight]]></translation>
+			</item>
+		</Spotlight>
+		<Core>
+			<item type="label" name="Spotlight">
+				<translation language="nl"><![CDATA[Spotlight]]></translation>
+				<translation language="en"><![CDATA[Spotlight]]></translation>
+			</item>
+			<item type="label" name="SpotlightDetail">
+				<translation language="nl"><![CDATA[Spotlight detail]]></translation>
+				<translation language="en"><![CDATA[Spotlight detail]]></translation>
+			</item>
+			<item type="label" name="SpotlightCategory">
+				<translation language="nl"><![CDATA[Spotlight categorie]]></translation>
+				<translation language="en"><![CDATA[Spotlight category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

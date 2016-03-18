@@ -80,7 +80,7 @@ class Add extends ActionAdd
             $fields = $this->frm->getFields();
 
             $fields['titel']->isFilled(Language::err('FieldIsRequired'));
-            else $fields['afbeelding']->addError(Language::err('FieldIsRequired'));
+            //else $fields['afbeelding']->addError(Language::err('FieldIsRequired'));
 
             // validate meta
             $this->meta->validate();

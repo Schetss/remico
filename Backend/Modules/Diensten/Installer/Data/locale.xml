@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Diensten>
+			<item type="label" name="AddDiensten">
+				<translation language="nl"><![CDATA[Diensten toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Diensten]]></translation>
+			</item>
+		</Diensten>
+		<Core>
+			<item type="label" name="Diensten">
+				<translation language="nl"><![CDATA[Diensten]]></translation>
+				<translation language="en"><![CDATA[Diensten]]></translation>
+			</item>
+			<item type="label" name="DienstenDetail">
+				<translation language="nl"><![CDATA[Diensten detail]]></translation>
+				<translation language="en"><![CDATA[Diensten detail]]></translation>
+			</item>
+			<item type="label" name="DienstenCategory">
+				<translation language="nl"><![CDATA[Diensten categorie]]></translation>
+				<translation language="en"><![CDATA[Diensten category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

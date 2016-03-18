@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Geschiedenis>
+			<item type="label" name="AddGeschiedenis">
+				<translation language="nl"><![CDATA[Geschiedenis toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Geschiedenis]]></translation>
+			</item>
+		</Geschiedenis>
+		<Core>
+			<item type="label" name="Geschiedenis">
+				<translation language="nl"><![CDATA[Geschiedenis]]></translation>
+				<translation language="en"><![CDATA[Geschiedenis]]></translation>
+			</item>
+			<item type="label" name="GeschiedenisDetail">
+				<translation language="nl"><![CDATA[Geschiedenis detail]]></translation>
+				<translation language="en"><![CDATA[Geschiedenis detail]]></translation>
+			</item>
+			<item type="label" name="GeschiedenisCategory">
+				<translation language="nl"><![CDATA[Geschiedenis categorie]]></translation>
+				<translation language="en"><![CDATA[Geschiedenis category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

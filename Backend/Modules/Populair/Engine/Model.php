@@ -8,7 +8,7 @@ use Backend\Core\Engine\Language;
 /**
  * In this file we store all generic functions that we will be using in the Populair module
  *
- * @author Stijn Schets <stijn@schetss.be>
+ * @author Stijn Schets <stijn@schetss.be> 
  */
 class Model
 {
