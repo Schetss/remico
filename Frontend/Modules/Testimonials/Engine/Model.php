@@ -92,4 +92,32 @@ class Model
         );
     }
 
+
+    /**
+     * Get All Testimonials
+     *
+     * @return array
+     */
+    public static function getAllTestimonials()
+    {
+        $return = (array) FrontendModel::get('database')->getRecords(
+            'SELECT id, titel AS title, tekst as content, klant as client
+            FROM testimonials
+            WHERE testimonials.show = true
+            ORDER BY datum
+            ',
+            array(),
+            'id'
+        );
+
+        // loop items and unserialize
+        foreach ($return as &$row) {
+            if (isset($row['meta_data'])) {
+                $row['meta_data'] = unserialize($row['meta_data']);
+            }
+        }
+
+        return $return;
+    }
+
 }

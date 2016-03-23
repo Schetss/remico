@@ -16,7 +16,7 @@
 						{/option:widgetBlogRecentArticlesFull.image}
 					</div>
 
-					<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
+					<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
 							<h5>{$widgetBlogRecentArticlesFull.title}</h5>
 							
 							<p class="blog-date">

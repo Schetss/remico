@@ -92,4 +92,31 @@ class Model
         );
     }
 
+
+    /**
+     * Get AllAfleveringSmall
+     *
+     * @return array
+     */
+    public static function getAllOverOns()
+    {
+        $return = (array) FrontendModel::get('database')->getRecords(
+            'SELECT id, title AS title, subtitle as subtitle, content as content, goto as url, gototext as urltext, image as image
+            FROM over_ons 
+            ORDER BY sequence
+            ',
+            array(),
+            'id'
+        );
+
+        // loop items and unserialize
+        foreach ($return as &$row) {
+            if (isset($row['meta_data'])) {
+                $row['meta_data'] = unserialize($row['meta_data']);
+            }
+        }
+
+        return $return;
+    }
+
 }

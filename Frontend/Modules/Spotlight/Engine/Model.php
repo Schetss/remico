@@ -204,15 +204,47 @@ class Model
 
 
      /**
-     * Get all item
+     * Get all 1A
      *
      * @return int
      */
-        public static function getAllCategory1()
+        public static function getAllCategory1a()
         {
             $return = (array) FrontendModel::get('database')->getRecords(
-               'SELECT id, title AS title
+               'SELECT id, title AS title, id as id
                 FROM spotlight 
+                WHERE category_id = 1
+                ORDER BY sequence LIMIT 3;
+                ',
+                array(),
+                'id'
+            );
+
+            // loop items and unserialize
+            foreach ($return as &$row) {
+                if (isset($row['meta_data'])) {
+                    $row['meta_data'] = unserialize($row['meta_data']);
+                }
+            }
+
+            return $return;
+        }
+
+
+     /**
+     * Get all 1B
+     *
+     * @return int
+     */
+        public static function getAllCategory1b()
+        {
+            $return = (array) FrontendModel::get('database')->getRecords(
+               'SELECT id, title AS title, id as id
+                FROM spotlight 
+                WHERE category_id = 1 AND
+                sequence = 4 OR 
+                sequence = 5 OR
+                sequence = 6
                 ORDER BY sequence;
                 ',
                 array(),
@@ -229,6 +261,37 @@ class Model
             return $return;
         }
 
+
+
+     /**
+     * Get all 1C
+     *
+     * @return int
+     */
+        public static function getAllCategory1c()
+        {
+            $return = (array) FrontendModel::get('database')->getRecords(
+               'SELECT id, title AS title, id as id
+                FROM spotlight 
+                WHERE category_id = 1 AND
+                sequence = 7 OR 
+                sequence = 8 OR
+                sequence = 9
+                ORDER BY sequence;
+                ',
+                array(),
+                'id'
+            );
+
+            // loop items and unserialize
+            foreach ($return as &$row) {
+                if (isset($row['meta_data'])) {
+                    $row['meta_data'] = unserialize($row['meta_data']);
+                }
+            }
+
+            return $return;
+        }
 
     
 

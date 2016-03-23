@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Makelaars>
+			<item type="label" name="AddMakelaars">
+				<translation language="nl"><![CDATA[Makelaars toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Makelaars]]></translation>
+			</item>
+		</Makelaars>
+		<Core>
+			<item type="label" name="Makelaars">
+				<translation language="nl"><![CDATA[Makelaars]]></translation>
+				<translation language="en"><![CDATA[Makelaars]]></translation>
+			</item>
+			<item type="label" name="MakelaarsDetail">
+				<translation language="nl"><![CDATA[Makelaars detail]]></translation>
+				<translation language="en"><![CDATA[Makelaars detail]]></translation>
+			</item>
+			<item type="label" name="MakelaarsCategory">
+				<translation language="nl"><![CDATA[Makelaars categorie]]></translation>
+				<translation language="en"><![CDATA[Makelaars category]]></translation>
+			</item>
+			<item type="label" name="LiesbethWidget">
+				<translation language="nl"><![CDATA[Liesbeth]]></translation>
+				<translation language="en"><![CDATA[Liesbeth]]></translation>
+			</item>
+			<item type="label" name="GeertWidget">
+				<translation language="nl"><![CDATA[Geert]]></translation>
+				<translation language="en"><![CDATA[Geert]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

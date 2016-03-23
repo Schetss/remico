@@ -92,4 +92,32 @@ class Model
         );
     }
 
+
+
+    /**
+     * Get All Geschiedenis
+     *
+     * @return array
+     */
+    public static function getAllGeschiedenis()
+    {
+        $return = (array) FrontendModel::get('database')->getRecords(
+            'SELECT id, titel AS title, content as content, goto as url, gototext as urltext, image as image, datum as date
+            FROM geschiedenis 
+            ORDER BY datum
+            ',
+            array(),
+            'id'
+        );
+
+        // loop items and unserialize
+        foreach ($return as &$row) {
+            if (isset($row['meta_data'])) {
+                $row['meta_data'] = unserialize($row['meta_data']);
+            }
+        }
+
+        return $return;
+    }
+
 }

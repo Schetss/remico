@@ -202,4 +202,32 @@ class Model
         );
     }
 
+
+    /**
+     * Get All Geschiedenis
+     *
+     * @return array
+     */
+    public static function getAllCategory1()
+    {
+        $return = (array) FrontendModel::get('database')->getRecords(
+            'SELECT id, title as title, content as content, goto as url, gototext as urltext, image as image
+            FROM small_blocks
+            WHERE category_id = 1 
+            ORDER BY sequence
+            ',
+            array(),
+            'id'
+        );
+
+        // loop items and unserialize
+        foreach ($return as &$row) {
+            if (isset($row['meta_data'])) {
+                $row['meta_data'] = unserialize($row['meta_data']);
+            }
+        }
+
+        return $return;
+    }
+
 }

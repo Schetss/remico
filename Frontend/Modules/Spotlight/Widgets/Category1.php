@@ -29,7 +29,13 @@ class Category1 extends Widget
 
     private function parse()
     {
-        $Category1 = FrontendSpotlightModel::getAllCategory1();
-        $this->tpl->assign('widgetCategory1', $Category1);
+        $Category1a = FrontendSpotlightModel::getAllCategory1a();
+        $this->tpl->assign('widgetCategory1a', $Category1a);
+
+        $Category1b = FrontendSpotlightModel::getAllCategory1b();
+        $this->tpl->assign('widgetCategory1b', $Category1b);
+
+        $Category1c = FrontendSpotlightModel::getAllCategory1c();
+        $this->tpl->assign('widgetCategory1c', $Category1c);
     }
 }

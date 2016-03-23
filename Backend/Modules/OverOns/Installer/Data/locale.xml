@@ -20,6 +20,18 @@
 				<translation language="nl"><![CDATA[Over ons categorie]]></translation>
 				<translation language="en"><![CDATA[Over ons category]]></translation>
 			</item>
+			<item type="label" name="OverOnsWidget">
+				<translation language="nl"><![CDATA[Over ons widget]]></translation>
+				<translation language="en"><![CDATA[Over ons widget]]></translation>
+			</item>
+			<item type="label" name="ImageCarouselWidget">
+				<translation language="nl"><![CDATA[Carousel widget]]></translation>
+				<translation language="en"><![CDATA[Carousel widget]]></translation>
+			</item>
+			<item type="label" name="Category1">
+				<translation language="nl"><![CDATA[Categorie 1]]></translation>
+				<translation language="en"><![CDATA[Categorie 1]]></translation>
+			</item>
 			<item type="message" name="NoCategories">
 				<translation language="en"><![CDATA[no categories]]></translation>
 				<translation language="nl"><![CDATA[geen categorieën]]></translation>

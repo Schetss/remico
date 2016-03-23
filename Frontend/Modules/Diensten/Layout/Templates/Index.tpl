@@ -13,7 +13,7 @@
 						<img src="{$SITE_URL}/src/Frontend/Files/Diensten/image/800x600/{$items.image}" alt="{$items.title}" />
 					</header>
 					<div class="content">
-						<h4>{$items.title}</h4>
+						<h5>{$items.title}</h5>
 						
 							{$items.content}
 						
