@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Vastgoedzoeker>
+			<item type="label" name="AddVastgoedzoeker">
+				<translation language="nl"><![CDATA[Vastgoedzoeker toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Vastgoedzoeker]]></translation>
+			</item>
+		</Vastgoedzoeker>
+		<Core>
+			<item type="label" name="Vastgoedzoeker">
+				<translation language="nl"><![CDATA[Vastgoedzoeker]]></translation>
+				<translation language="en"><![CDATA[Vastgoedzoeker]]></translation>
+			</item>
+			<item type="label" name="VastgoedzoekerDetail">
+				<translation language="nl"><![CDATA[Vastgoedzoeker detail]]></translation>
+				<translation language="en"><![CDATA[Vastgoedzoeker detail]]></translation>
+			</item>
+			<item type="label" name="VastgoedzoekerCategory">
+				<translation language="nl"><![CDATA[Vastgoedzoeker categorie]]></translation>
+				<translation language="en"><![CDATA[Vastgoedzoeker category]]></translation>
+			</item>
+			<item type="label" name="NederlandsWidget">
+				<translation language="nl"><![CDATA[Nederlands]]></translation>
+				<translation language="en"><![CDATA[Nederlands]]></translation>
+			</item>
+			<item type="label" name="FransWidget">
+				<translation language="nl"><![CDATA[Frans]]></translation>
+				<translation language="en"><![CDATA[Frans]]></translation>
+			</item>
+			<item type="label" name="EngelsWidget">
+				<translation language="nl"><![CDATA[Engels]]></translation>
+				<translation language="en"><![CDATA[Engels]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+		</Core>
+	</Frontend>
+</locale>

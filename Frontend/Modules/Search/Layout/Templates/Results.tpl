@@ -7,32 +7,39 @@
 {option:searchTerm}
 	<section id="searchResults" class="mod">
 		<div class="inner">
+
+
 			{option:!searchResults}
-				<div class="bd content">
+				<div class="bd content no-results">
 					<p>{$msgSearchNoItems}</p>
 				</div>
 			{/option:!searchResults}
+
+
 			{option:searchResults}
 				{iteration:searchResults}
-					<div class="bd">
-						<section class="mod">
-							<div class="inner">
-								<header class="hd">
-									<h3>
-										<a href="{$searchResults.full_url}" title="{$searchResults.title}">
-											{$searchResults.title}
-										</a>
-									</h3>
-								</header>
-								<div class="bd content">
-									{option:!searchResults.introduction}{$searchResults.text|truncate:200}{/option:!searchResults.introduction}
-									{option:searchResults.introduction}{$searchResults.introduction}{/option:searchResults.introduction}
-								</div>
+					<div class="grid block">
+	    				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
+							<h4>
+								
+										{$searchResults.title}
+								
+							</h4>
+						
+							<div class="bd content">
+								{option:!searchResults.introduction}{$searchResults.text|truncate:200}{/option:!searchResults.introduction}
+								{option:searchResults.introduction}{$searchResults.introduction}{/option:searchResults.introduction}
+								<p class="blue-link">
+									<a href="{$searchResults.full_url}" title="{$searchResults.title}">{$lblMore|ucfirst}</a>
+								</p>
 							</div>
-						</section>
+						</div>
+						<div class="clear"></div>
 					</div>
 				{/iteration:searchResults}
 			{/option:searchResults}
+
+
 		</div>
 	</section>
 	{include:Core/Layout/Templates/Pagination.tpl}

@@ -5,25 +5,24 @@
 *}
 
 <section id="searchIndex" class="mod">
-	<div class="inner">
-		<header class="hd">
-			<h4>{$lblSearchAgain|ucfirst}</h4>
-		</header>
-		<div class="bd">
-			{form:search}
-				<p{option:txtQError} class="errorArea"{/option:txtQError}>
-					<label for="q">{$lblSearchTerm|ucfirst}<abbr title="{$lblRequiredField}">*</abbr></label>
-					{$txtQ} {$txtQError}
-				</p>
-				<p>
-					<input id="submit" class="inputSubmit" type="submit" name="submit" value="{$lblSearch|ucfirst}" />
-				</p>
-			{/form:search}
-		</div>
+	<div class="block search-form-index">
+		{form:search}
+			<input value="" id="qWidget" name="q_widget" maxlength="255" type="text" class="inputText autoSuggest" placeholder="Geef hier uw zoekterm in" />
+			<input id="submit" class="inputSubmit submit-search-form cta-button" type="submit" name="submit" value="{$lblSearch|ucfirst}" />
+		{/form:search}	
+		<div class="clear"></div>	
 	</div>
 </section>
+
+
 
 {* don't remove this container nor replace the id - it'll be used to populate the search results live as you type *}
 <div id="searchContainer">
 	{include:Modules/Search/Layout/Templates/Results.tpl}
 </div>
+
+
+
+
+
+
