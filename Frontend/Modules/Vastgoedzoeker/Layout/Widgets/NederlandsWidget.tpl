@@ -30,6 +30,7 @@
 							{$estatelist.Category} - {iteration:estatelist.Purposes}{$estatelist.Purposes.Name}{/iteration:estatelist.Purposes}
 						
 						</p>
+						<a href="{$SITE_URL}/nl/kopen-huren/detail?ref={$estatelist.EstateID}">meer info</a>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -40,8 +41,11 @@
 
 	{/option:estatelist}
 
-	<h5>{$estatecount}</h5>
-
+	{option:estatecount}
+	 {iteration:estatecount}
+		<h5>{$estatecount.Number}</h5>
+		 {/iteration:estatecount}
+	{/option:estatecount}
 
 </div>
 

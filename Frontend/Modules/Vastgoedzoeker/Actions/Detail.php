@@ -103,9 +103,9 @@ class Detail extends Block
         $this->tpl->assign('item', $this->record);
     }
 
-    /**
-     * @return mixed
-     */
+    // /**
+    //  * @return mixed
+    //  */
     private function getLastParameter()
     {
         $numberOfParameters = count($this->URL->getParameters(false));

@@ -99,8 +99,6 @@ class Model
     // WHOMAN
     //
 
-
-
     public static function getNed()
     {
         $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22Page%22:8,%22RowsPerPage%22:10,%22Language%22:%22nl-BE%22}";
@@ -120,10 +118,51 @@ class Model
         $totaldecode = count($decode2);
         $paginationnumber = ceil($totaldecode/10);
 
+        
+        $levels = array();
+
+        for ($i = 0; $i < $paginationnumber; ++$i) {
+            $levels[] = $i;
+        }
+        
+        $attributes = array(1);
+
+        foreach ($levels as $key => $level):
+           foreach ($attributes as $k =>$attribute):
+                 $variables[$level]["Number"] = $attribute + $level; // changed $variables[] to $variables[$level][]
+           endforeach;
+        endforeach;
+
+        return $variables;
+    }
+
+     public static function getCount2()
+    {
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22Language%22:%22nl-BE%22}";
+        $jsonlist = file_get_contents($url);
+        $decode = json_decode($jsonlist, true);
+        $decode2 = $decode['d']['EstateList'];
+        $totaldecode = count($decode2);
+        $paginationnumber = ceil($totaldecode/10);
 
         // $test = array($jsonlist);
         return $paginationnumber;
     }
+
+
+
+
+     public static function getRef()
+    {
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22EstateID%22:2385903,%22Page%22:8,%22RowsPerPage%22:10,%22Language%22:%22nl-BE%22}";
+        $jsonlist = file_get_contents($url);
+        $decode = json_decode($jsonlist, true);
+
+        // $test = array($jsonlist);
+        return $decode;
+    }
+
+
 
 
 

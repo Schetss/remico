@@ -42,6 +42,9 @@ class NederlandsWidget extends FrontendBaseWidget
         $this->tpl->assign('list', (array)$this->list);
         $this->tpl->assign('estatelist', $this->list['d']['EstateList']);
 
-        $this->tpl->assign('estatecount', $this->count);
+        $this->tpl->assign('estatecount', (array)$this->count);
     }
+
+  
+
 }
