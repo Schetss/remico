@@ -43,7 +43,7 @@ class ContentWidget extends FrontendBaseWidget
         }
 
         $this->content = FrontendVastgoedzoekerModel::getContent($canonicalUrl);
-        $this->tpl->assign('content', (array)$this->content);
+        $this->tpl->assign('content', $this->content['d']['EstateList']);
 
     }
 

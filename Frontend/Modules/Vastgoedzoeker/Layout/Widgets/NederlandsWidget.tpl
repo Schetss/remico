@@ -1,48 +1,59 @@
-<div class="wrapper-inner search-estate">
+
 	{option:estatelist}
 	 	{iteration:estatelist}
-			<div class="grid block">
-				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-					<div class="img-holder">
-						<img alt="" src="/src/Frontend/Themes/Remico/Core/Layout/img/footerbg.jpg"/>
+	 	<a href="{$SITE_URL}/nl/kopen-huren/detail?ref={$estatelist.EstateID}">
+		 	<div class="search-estate">
+			 	<div class="wrapper-inner">
+					<div class="grid estate">
+						<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
+							<div class="img-holder showimg">
+								{option:estatelist.Pictures}
+									<div class="img-holder showimg">
+								  		{iteration:estatelist.Pictures}
+						                	<img class="yesimg" alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
+					            		{/iteration:estatelist.Pictures}
+					            	</div>
+						 		{/option:estatelist.Pictures} 
+						 		{option:!estatelist.Pictures}
+							 		<div class="img-holder hideimg">
+							 			<img class="noimg" alt="no image" src="/src/Frontend/Themes/Remico/Core/Layout/img/image.svg" />
+							 		</div>
+						 		{/option:!estatelist.Pictures} 
+							</div>
+						</div>
+
+						<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
+								<h4>{$estatelist.City}</h4>
+								
+								<div class="subtitle">
+									<p>
+										{$estatelist.Address1} {$estatelist.Number} {$estatelist.Box}
+									</p>
+									<p>
+										<span>REF</span> {$estatelist.EstateID}<br />
+										{$estatelist.Name}
+									</p>
+								</div>
+								<p class="opp">
+									{$estatelist.MinArea}m<sup>2</sup> - {$estatelist.MaxArea}m<sup>2</sup>
+								</p>
+								<ul>
+									<li>{iteration:estatelist.Purposes}{$estatelist.Purposes.Name}{/iteration:estatelist.Purposes}</li>
+									<li>{$estatelist.SubCategory}</li>
+								</ul>
+
+								<div class="more-search"> meer info </div>
+						</div>
+						<div class="clear"></div>
 					</div>
-					<!-- {option:estatelist.Pictures}
-					  	{iteration:estatelist.Pictures}
-			                <img alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
-			            {/iteration:estatelist.Pictures}
-				 	{/option:estatelist.Pictures}  --> 
 				</div>
-
-				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
-						<h5>{$estatelist.Name}</h5>
-						
-						<p class="blog-date">
-							{$estatelist.Zip} {$estatelist.City}
-						</p>
-						<p>
-							{$estatelist.EstateID}
-						</p>
-
-						<p>
-							{$estatelist.MinArea} tot {$estatelist.MaxArea}
-						</p>
-						<p>
-							{$estatelist.Category} - {iteration:estatelist.Purposes}{$estatelist.Purposes.Name}{/iteration:estatelist.Purposes}
-						
-						</p>
-						<a href="{$SITE_URL}/nl/kopen-huren/detail?ref={$estatelist.EstateID}">meer info</a>
-				</div>
-				<div class="clear"></div>
 			</div>
-	      
-	          
-
+		</a>
 	    {/iteration:estatelist}
 
 	{/option:estatelist}
 
 
-</div>
 
 
 
@@ -69,5 +80,6 @@
 		</div>
 {/option:estatecount}
 
+{$estatelist|dump}
 
 			
