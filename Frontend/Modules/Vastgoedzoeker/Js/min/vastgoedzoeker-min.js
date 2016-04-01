@@ -1,0 +1,1 @@
+jsFrontend.vastgoedzoeker={init:function(){}},$(jsFrontend.vastgoedzoeker.init);

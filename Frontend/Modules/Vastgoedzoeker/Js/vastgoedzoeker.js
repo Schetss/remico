@@ -20,3 +20,13 @@ jsFrontend.vastgoedzoeker =
 }
 
 $(jsFrontend.vastgoedzoeker.init);
+
+
+
+
+
+
+
+
+
+

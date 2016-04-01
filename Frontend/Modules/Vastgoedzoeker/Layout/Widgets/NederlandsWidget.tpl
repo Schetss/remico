@@ -41,12 +41,33 @@
 
 	{/option:estatelist}
 
-	{option:estatecount}
-	 {iteration:estatecount}
-		<h5>{$estatecount.Number}</h5>
-		 {/iteration:estatecount}
-	{/option:estatecount}
 
 </div>
 
-{$estatelist|dump}
+
+
+
+{option:estatecount}
+
+		<div class="wrapper-inner">
+			<div class="grid block">
+				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
+					<nav class="pagination nav-center-hor pagination-search">
+						<ul>
+							{iteration:estatecount}
+								<li id="pageNumber{$estatecount.Number}" {$estatecount.Selected}>
+									{option:estatecount.Selected}<span>{/option:estatecount.Selected}{option:!estatecount.Selected}<a href="{option:pagurl}{$pagurl}{/option:pagurl}&amp;Page={$estatecount.Number}">{/option:!estatecount.Selected}{$estatecount.Number}{option:!estatecount.Selected}</a>{/option:!estatecount.Selected}{option:estatecount.Selected}</span>{/option:estatecount.Selected}
+								</li>
+							{/iteration:estatecount}
+
+						</ul>
+					</nav>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+{/option:estatecount}
+
+
+			
