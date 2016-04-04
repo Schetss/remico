@@ -11,6 +11,7 @@
 	<div class="wrapper-inner">
 		<div class="grid block-title block">
 			<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
+				<div class="overlay2" onClick="style.pointerEvents='none'"></div>
 				<div id="map{$widgetLocationItem.id}" class="parseMap"></div>
 				{option:widgetLocationSettings.directions}
 					<aside id="locationSearch{$widgetLocationItem.id}" class="locationSearch">

@@ -23,19 +23,27 @@
 						</div>
 
 						<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
-								<h4>{$estatelist.City}</h4>
+								<h4>{$estatelist.Name}</h4>
 								
 								<div class="subtitle">
 									<p>
-										{$estatelist.Address1} {$estatelist.Number} {$estatelist.Box}
+										<!-- {$estatelist.Address1} {$estatelist.Number} {$estatelist.Box}- -->{$estatelist.Zip} {$estatelist.City}
 									</p>
 									<p>
-										<span>REF</span> {$estatelist.EstateID}<br />
-										{$estatelist.Name}
+										<span>REF</span> {$estatelist.EstateID} 
+									
 									</p>
 								</div>
 								<p class="opp">
-									{$estatelist.MinArea}m<sup>2</sup> - {$estatelist.MaxArea}m<sup>2</sup>
+									{option:estatelist.MinArea}
+										{$estatelist.MinArea}m<sup>2</sup> - {$estatelist.MaxArea}m<sup>2</sup>
+									{/option:estatelist.MinArea}
+									{option:!estatelist.MinArea}
+										Oppervlakte op aanvraag
+									{/option:!estatelist.MinArea}
+								</p>
+								<p class="avail">
+									{$estatelist.Comments}
 								</p>
 								<ul>
 									<li>{iteration:estatelist.Purposes}{$estatelist.Purposes.Name}{/iteration:estatelist.Purposes}</li>
@@ -52,10 +60,6 @@
 	    {/iteration:estatelist}
 
 	{/option:estatelist}
-
-
-
-
 
 
 {option:estatecount}

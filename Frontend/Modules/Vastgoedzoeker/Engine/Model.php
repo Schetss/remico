@@ -101,19 +101,32 @@ class Model
 
     public static function getNed($Searchterm,$Genre,$BuyRent,$pageNumber)
     {
-        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Page%22:" . $pageNumber . ",%22RowsPerPage%22:10,%22Language%22:%22nl-BE%22}";
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Page%22:" . $pageNumber . ",%22RowsPerPage%22:10,%22Language%22:%22nl-BE%22,%22IsTypeEstate%22:true}";
         $jsonlist = file_get_contents($url);
         $decode = json_decode($jsonlist, true);
 
+        $word = "kantoren & magazijn";
+        $replacement = "KMO-Units";
+        $val = "SubCategory";
 
-         // print_r($url);
-        // $test = array($jsonlist);
+        // print_r($decode);
+
+        foreach ($decode['d']['EstateList'] as $key=>$val) 
+        {       
+             if($val["SubCategory"] == $word){
+               $decode['d']['EstateList'][$key]['SubCategory'] = $replacement;
+
+             }
+            
+        }
+
+
         return $decode;
     }
 
     public static function getCount($Searchterm,$Genre,$BuyRent,$pageNumber)
     {
-        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Language%22:%22nl-BE%22}";
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Language%22:%22nl-BE%22,%22IsTypeEstate%22:true}";
         $jsonlist = file_get_contents($url);
         $decode = json_decode($jsonlist, true);
         $decode2 = $decode['d']['EstateList'];
@@ -157,13 +170,27 @@ class Model
 
     public static function getContent($ref)
     {
-        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22EstateID%22:" . $ref . ",%22Page%22:8,%22RowsPerPage%22:10,%22Language%22:%22nl-BE%22}";
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22EstateID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
         $jsonlist = file_get_contents($url);
         $decode = json_decode($jsonlist, true);
 
         // $test = array($jsonlist);
         return $decode;
     }
+
+    public static function getContentChild($ref)
+    {
+        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22ParentID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
+        $jsonlist = file_get_contents($url);
+        $decode = json_decode($jsonlist, true);
+
+        // $test = array($jsonlist);
+        return $decode;
+    }
+
+
+    
+
 
 
 

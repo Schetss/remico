@@ -35,22 +35,32 @@
 				<div class="wrapper">
 					<div class="wrapper-inner">
 
-					<h1 itemprop="name">{$content.Name}</h1>
+						<h1 itemprop="name">{$content.Name}</h1>
 						
 					</div>
 				</div>
+
 			</div>
 			<hr class="hr-shadow" />
 		</div>
 	</div>
 
-	
+<div class="estate-head">
 	<div class="wrapper">		
-		<div class="wrapper-inner">
+		<div class="wrapper-inner estate-wrapper">
+
+
+			
+			<div class="estate-img">
+				Alle afbeeldingen
+			</div>
+
+
 			<div class="grid block">
 
 				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
-					<h5>{$content.Address1} {$content.Number}, {$content.Zip} {$content.City}</h5>
+					<h4>{$content.Address1} {$content.Number}, {$content.Zip} {$content.City}</h4>
+					<p>{$content.Comments}</p>
 					<ul>
 						<li>{iteration:content.Purposes}{$content.Purposes.Name}{/iteration:content.Purposes}</li>
 						<li>{$content.SubCategory}</li>
@@ -58,45 +68,140 @@
 				</div>
 
 				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-					<p>{$content.MinArea}m<sup>2</sup> - {$content.MaxArea}m<sup>2</sup></p>
+					<p class="ground">{$content.MinArea}m<sup>2</sup> - {$content.MaxArea}m<sup>2</sup></p>
 
-					<p><span>REF</span> {$content.EstateID}</p>
+					<p class="ref"><span>REF</span> {$content.EstateID}</p>
 
 				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
+	<div class="wrapper">		
+		<div class="wrapper-inner">
+			<div class="grid block">
+				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 content-block-2-3">
+					<div class="editor-block">
 
-				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
-					
-					<h6>Eigenschappen</h6>
-
-					<h6>Voorzieningen</h6>
-
-					<h6>Omschrijving</h6>
-					
-
-					<h6>Het pand bezoeken of meer informatie?</h6>
-
-					
-				</div>
-
-				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-					<div>
-						{* MainRight position *}
-						{option:positionMainRight}
-							{iteration:positionMainRight}
-							{option:!positionMainRight.blockIsHTML}
-								{$positionMainRight.blockContent}
-							{/option:!positionMainRight.blockIsHTML}
-							{option:positionMainRight.blockIsHTML}
-								{$positionMainRight.blockContent}
-							{/option:positionMainRight.blockIsHTML}
-							{/iteration:positionMainRight}
-						{/option:positionMainRight}
-						<div class="clear"></div>
-
-						<div class="sm-share">
+						<h4>Eigenschappen</h4>
+						<p>
+							<table style="width: 100%;">
+								<tbody>
+									<tr>
+										<td>
+											Garage</td>
+										<td>
+											2 meter</td>
+									</tr>
+									<tr>
+										<td>
+											Te</td>
+										<td>
+											200m2 tot 400m2</td>
+									</tr>
+									<tr>
+										<td>
+											Extra voorzieningen</td>
+										<td>
+											parking, keuken, sanitair, ...</td>
+									</tr>
+									<tr>
+										<td>
+											Tuin</td>
+										<td>
+											20m2</td>
+									</tr>
+								</tbody>
+							</table>
+						</p>
+						<p></p>
+						<h4>Voorzieningen</h4>
+						<p>
+							<ul class="list-fasc">
+								<li>
+									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/parking.svg" alt="parking" /> Parking
+								</li>
+								<li>
+									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/safe.svg" alt="Alarm" />Alarmsysteem
+								</li>
+								<li>
+									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/fire.svg" alt="Brandalarm" />Brandalarm
+								</li>
+								<li>
+									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/wifi.svg" alt="wifi" />Internet
+								</li>
+								<li>
+									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/kitchen.svg" alt="keuken" />Keuken
+								</li>
+							</ul>
+						</p>
+						<p></p>
+						<h4>Omschrijving</h4>
+						<p></p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum commodo leo eu ultrices. Nam lorem ante, consequat eu mauris et, faucibus placerat est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse id vulputate eros, sed scelerisque leo. Aenean tristique eget nunc eu consectetur. Nam tincidunt dictum nibh eget auctor. Aliquam erat volutpat.
+						</p>
 						
+
+						<p></p>
+						<h4>Op de kaart!</h4>
+						<p>
+						</p>
+						<div class="overlay" onClick="style.pointerEvents='none'"></div>
+						<iframe class="maps-estate" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.073016243875!2d4.255672551850588!3d51.08865997946824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3ed456b6e0b2b%3A0x231e0170dc1c8d18!2sIndustrieweg+34%2C+2880+Bornem!5e0!3m2!1sen!2sbe!4v1459775674484" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<p></p>
+
+
+
+						{option:contentChild}
+
+							<h4>{$content.Comments}</h4>
+							<p>
+								<table style="width: 100%;" class="estate-table">
+									<tr>
+										<th>Naam</th>
+										<th>Min. opp.</th>
+										<th>Max. opp.</th>
+										<th>Verdieping</th>
+									</tr>
+
+									<tbody>
+										{iteration:contentChild}
+											<tr>
+												<td>
+													{$contentChild.Name}
+												</td>
+
+												<td>
+													{$content.MinArea}m<sup>2</sup> 
+												</td>
+
+												<td>
+													{$content.MaxArea}m<sup>2</sup>
+												</td>
+
+												<td>
+													{$content.Floor}
+												</td>
+
+											</tr>
+										{/iteration:contentChild}
+									</tbody>
+								</table>
+							</p>
+							<p></p>
+							
+						{/option:contentChild}
+
+						<h5>Deel deze pagina</h5>
+
+
+					</div>
+
+					<div class="sm-share estate-share">
 						<ul class="rrssb-buttons clearfix">  
 		                    <li class="rrssb-facebook">
 						        <!--  Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
@@ -131,6 +236,25 @@
 					
 					</div>
 
+				</div>
+
+				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
+					<div>
+						{* MainRight position *}
+						{option:positionMainRight}
+							{iteration:positionMainRight}
+							{option:!positionMainRight.blockIsHTML}
+								{$positionMainRight.blockContent}
+							{/option:!positionMainRight.blockIsHTML}
+							{option:positionMainRight.blockIsHTML}
+								{$positionMainRight.blockContent}
+							{/option:positionMainRight.blockIsHTML}
+							{/iteration:positionMainRight}
+						{/option:positionMainRight}
+						<div class="clear"></div>
+
+						
+
 					<div class="clear"></div>
 					</div>
 
@@ -142,14 +266,6 @@
 	</div>	
 {/iteration:content}
 {/option:content}
-
-{$content|dump}
-
-
-
-
-
-
 
 
 
