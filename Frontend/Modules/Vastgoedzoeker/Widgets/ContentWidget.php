@@ -43,11 +43,44 @@ class ContentWidget extends FrontendBaseWidget
         }
 
         $this->content = FrontendVastgoedzoekerModel::getContent($canonicalUrl);
-        $this->tpl->assign('content', $this->content['d']['EstateList']);
+      
+        $this->contentdetail = FrontendVastgoedzoekerModel::getDetailsE($canonicalUrl);
 
-        $this->content = FrontendVastgoedzoekerModel::getContentChild($canonicalUrl);
-        $this->tpl->assign('contentChild', $this->content['d']['EstateList']);
+        $this->contentdetail2 = FrontendVastgoedzoekerModel::getDetailsV($canonicalUrl);
+        
+        if($this->content != array(0)) {
+            $this->tpl->assign('content', $this->content['d']['EstateList']);
+        }
 
+        else {
+             $this->tpl->assign('content',  "");
+        }
+
+        if($this->contentdetail != array(0)) {
+            $this->tpl->assign('contentdetail', $this->contentdetail);
+        }
+
+        else {
+            $this->tpl->assign('contentdetail',  "");
+        }
+
+        if($this->contentdetail2 != array(0)) {
+            $this->tpl->assign('contentdetail2', $this->contentdetail2);
+        }
+
+        else {
+            $this->tpl->assign('contentdetail2',  "");
+        }
+      
+
+        $this->content2 = FrontendVastgoedzoekerModel::getContentChild($canonicalUrl);
+        
+        if($this->content2 != array(0)) {
+            $this->tpl->assign('contentChild', $this->content2['d']['EstateList']);
+        }
+        else {
+            $this->tpl->assign('contentChild',  "");
+        }
     }
 
 

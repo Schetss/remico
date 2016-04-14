@@ -159,21 +159,44 @@ class NederlandsWidget extends FrontendBaseWidget
             $pageurl = substr($pageurl1, 0, strpos($pageurl1, '&Page='));
         }
 
+        else if (strpos($pageurl1, '?') == false) {
+            $pageurl = $pageurl1 . '?';
+        }
+
         else {
             $pageurl = $pageurl1;
         }
 
 
         // print_r($PageNumber);
-
+        
         $this->list = FrontendVastgoedzoekerModel::getNed($Searchterm,$Genre,$BuyRent,$PageNumber);
         $this->count = FrontendVastgoedzoekerModel::getCount($Searchterm,$Genre,$BuyRent,$PageNumber);
+        $catch = array(0);
 
-        $this->tpl->assign('list', (array)$this->list);
-        $this->tpl->assign('estatelist', $this->list['d']['EstateList']);
+        $this->tpl->assign('estate', (array)$this->list);
+       
 
-        $this->tpl->assign('estatecount', (array)$this->count);
+        if($this->list != array(0)) {
+            $this->tpl->assign('estatelist', (array)$this->list);
+        }
 
+        else {
+             $this->tpl->assign('estatelist',  "");
+              // print_r($PageNumber);
+        }
+
+
+
+        if($this->count != array(0)) {
+            $this->tpl->assign('estatecount', (array)$this->count);
+        }
+
+        else {
+            $this->tpl->assign('estatecount',"");
+             // print_r($PageNumber);
+        }
+      
         
 
         $this->tpl->assign('pagurl', $pageurl);

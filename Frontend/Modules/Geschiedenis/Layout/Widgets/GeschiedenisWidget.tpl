@@ -16,7 +16,6 @@
 						</div>
 						<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
 							<h5>{$widgetGeschiedenis.title}</h5>
-							<p class="subtitle">{$widgetGeschiedenis.date}</p>
 							{$widgetGeschiedenis.content}
 							<p class="blue-link">
 								<a href="{$widgetGeschiedenis.url}">{$widgetGeschiedenis.urltext}</a>

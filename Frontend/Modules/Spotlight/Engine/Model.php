@@ -211,7 +211,7 @@ class Model
         public static function getAllCategory1a()
         {
             $return = (array) FrontendModel::get('database')->getRecords(
-               'SELECT id, title AS title, id as id
+               'SELECT id, title AS name, id as id, description as description, image as image
                 FROM spotlight 
                 WHERE category_id = 1
                 ORDER BY sequence LIMIT 3;
@@ -239,7 +239,7 @@ class Model
         public static function getAllCategory1b()
         {
             $return = (array) FrontendModel::get('database')->getRecords(
-               'SELECT id, title AS title, id as id
+               'SELECT id, title AS title, id as id, description as description, image as image
                 FROM spotlight 
                 WHERE category_id = 1 AND
                 sequence = 4 OR 
@@ -257,7 +257,7 @@ class Model
                     $row['meta_data'] = unserialize($row['meta_data']);
                 }
             }
-
+            
             return $return;
         }
 
@@ -271,7 +271,7 @@ class Model
         public static function getAllCategory1c()
         {
             $return = (array) FrontendModel::get('database')->getRecords(
-               'SELECT id, title AS title, id as id
+               'SELECT id, title AS title, id as id, description as description, image as image
                 FROM spotlight 
                 WHERE category_id = 1 AND
                 sequence = 7 OR 

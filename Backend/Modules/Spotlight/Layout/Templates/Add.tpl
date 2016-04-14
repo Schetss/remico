@@ -55,6 +55,17 @@
 
                     <td id="sidebar">
 
+                        <div class="box">
+                                <div class="heading">
+                                    <h3>
+                                        <label for="image">{$lblImage|ucfirst}</label>
+                                    </h3>
+                                </div>
+                                <div class="options">
+                                    {$fileImage} {$fileImageError}
+                                </div>
+                            </div>
+
                             <div class="box">
                                 <div class="heading">
                                     <h3>

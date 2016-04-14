@@ -103,6 +103,20 @@ class Model
         );
     }
 
+
+    /**
+     * Get the maximum Populair sequence.
+     *
+     * @return int
+     */
+    public static function getMaximumSequence()
+    {
+        return (int) BackendModel::get('database')->getVar(
+            'SELECT MAX(i.sequence)
+             FROM spotlight AS i'
+        );
+    }
+
     /**
      * Get all the categories
      *

@@ -1,4 +1,3 @@
-
 	{option:estatelist}
 	 	{iteration:estatelist}
 	 	<a href="{$SITE_URL}/nl/kopen-huren/detail?ref={$estatelist.EstateID}">
@@ -10,7 +9,9 @@
 								{option:estatelist.Pictures}
 									<div class="img-holder showimg">
 								  		{iteration:estatelist.Pictures}
-						                	<img class="yesimg" alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
+								  			{option:estatelist.Pictures.first}
+						                		<img class="yesimg" alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
+						                	{/option:estatelist.Pictures.first}
 					            		{/iteration:estatelist.Pictures}
 					            	</div>
 						 		{/option:estatelist.Pictures} 
@@ -62,16 +63,31 @@
 	{/option:estatelist}
 
 
-{option:estatecount}
-
+	{option:estatecount}
 		<div class="wrapper-inner">
 			<div class="grid block">
 				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
 					<nav class="pagination nav-center-hor pagination-search">
 						<ul>
 							{iteration:estatecount}
-								<li id="pageNumber{$estatecount.Number}" {$estatecount.Selected}>
-									{option:estatecount.Selected}<span>{/option:estatecount.Selected}{option:!estatecount.Selected}<a href="{option:pagurl}{$pagurl}{/option:pagurl}&amp;Page={$estatecount.Number}">{/option:!estatecount.Selected}{$estatecount.Number}{option:!estatecount.Selected}</a>{/option:!estatecount.Selected}{option:estatecount.Selected}</span>{/option:estatecount.Selected}
+								<li id="pageNumber{$estatecount.Number}" {option:estatecount.Selected}{$estatecount.Selected}{/option:estatecount.Selected}>
+
+									{option:estatecount.Selected}
+										<span>
+									{/option:estatecount.Selected}
+									{option:!estatecount.Selected}
+										<a href="{option:pagurl}{$pagurl}{/option:pagurl}&amp;Page={$estatecount.Number}">	
+									{/option:!estatecount.Selected}
+										{option:estatecount.Number}
+											{$estatecount.Number}
+										{/option:estatecount.Number}
+									{option:!estatecount.Selected}
+										</a>
+									{/option:!estatecount.Selected}
+									{option:estatecount.Selected}
+										</span>
+									{/option:estatecount.Selected}
+
 								</li>
 							{/iteration:estatecount}
 
@@ -82,8 +98,31 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-{/option:estatecount}
+	{/option:estatecount}
 
-{$estatelist|dump}
 
-			
+	{option:!estatelist}
+		
+		<div class="wrapper-inner">
+			<div class="grid block">
+				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
+					
+					{* Search position *}
+						{option:positionSearch}
+							{iteration:positionSearch}
+							{option:!positionSearch.blockIsHTML}
+								{$positionSearch.blockContent}
+							{/option:!positionSearch.blockIsHTML}
+							{option:positionSearch.blockIsHTML}
+								{$positionSearch.blockContent}
+							{/option:positionSearch.blockIsHTML}
+							{/iteration:positionSearch}
+						{/option:positionSearch}
+
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	{/option:!estatelist}

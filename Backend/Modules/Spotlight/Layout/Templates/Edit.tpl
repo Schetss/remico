@@ -40,6 +40,22 @@
                         </div>
 
                         <div class="box">
+                                <div class="heading">
+                                    <h3>
+                                        <label for="image">{$lblImage|ucfirst}</label>
+                                    </h3>
+                                </div>
+                                <div class="options">
+                                    {option:item.image}
+                                        <p><img src="{$FRONTEND_FILES_URL}/populair/image/128x128/{$item.image}"/></p>
+                                    {/option:item.image}
+                                    <p>
+                                        {$fileImage} {$fileImageError}
+                                    </p>
+                                </div>
+                            </div>
+
+                        <div class="box">
                             <div class="heading">
                                 <h3>
                                     <label for="description">{$lblDescription|ucfirst}</label>

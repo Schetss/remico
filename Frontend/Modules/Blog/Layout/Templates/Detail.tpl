@@ -43,7 +43,9 @@
 		<div class="grid block">
 			<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
 				<time class="blog-time" itemprop="datePublished" datetime="{$item.publish_on|date:'Y-m-d\TH:i:s'}">{$item.publish_on|date:{$dateFormatLong}:{$LANGUAGE}}</time>
-
+				<div class="introduction-blog">
+					{option:item.introduction}{$item.introduction}{/option:item.introduction}
+				</div>
 				{$item.text}
 
 				{option:navigation}
@@ -55,7 +57,6 @@
 						{/option:navigation.previous}
 						{option:navigation.next}
 							<div class="grid-item grid-xs-1-1 grid-s-1-2 grid-m-1-2 grid-l-1-2  blog-link  blog-link-r">
-								
 								<a class="blog-link" href="{$navigation.next.url}" rel="next">{$navigation.next.title|truncate:33}<img alt="previous" src="/src/Frontend/Themes/Remico/Core/Layout/img/arrow.svg" /> </a>
 							</div>
 						{/option:navigation.next}
@@ -64,7 +65,8 @@
 			</div>
 
 			<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-				<div class="sm-share">
+				<div class="sm-share blog-share">
+					<h6>Deel dit artikel</h6>
 					
 					<ul class="rrssb-buttons clearfix">  
 	                    <li class="rrssb-facebook">

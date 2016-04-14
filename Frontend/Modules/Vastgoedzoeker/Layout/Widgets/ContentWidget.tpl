@@ -6,16 +6,16 @@
 	- {$navigation}: contains an array with data for previous and next post
 *}
 {option:content}
-{iteration:content}
-	<div id="fb-root"></div>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=601278376597485";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	{iteration:content}
+		<div id="fb-root"></div>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=601278376597485";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 
 	<div class="searchSmall-wrapper estate-detail">
@@ -24,7 +24,9 @@
 			<div class="imageCarousel" data-scroll-speed="3">
 				{option:content.Pictures}
 					{iteration:content.Pictures}
-						<img alt="{$content.Pictures.Description}" src="{$content.Pictures.UrlLarge}" />
+						{option:content.Pictures.first}
+							<img alt="{$content.Pictures.Description}" src="{$content.Pictures.UrlLarge}" />
+						{/option:content.Pictures.first}
 					{/iteration:content.Pictures}
 				{/option:content.Pictures}
 				<div class="clear"></div>
@@ -48,13 +50,6 @@
 <div class="estate-head">
 	<div class="wrapper">		
 		<div class="wrapper-inner estate-wrapper">
-
-
-			
-			<div class="estate-img">
-				Alle afbeeldingen
-			</div>
-
 
 			<div class="grid block">
 
@@ -85,80 +80,93 @@
 			<div class="grid block">
 				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 content-block-2-3">
 					<div class="editor-block">
+						{option:contentdetail2}
+							<h4>Eigenschappen</h4>
+							<p>
+								<table style="width: 100%;" class="e-table">
+									<tbody>
+										
+											{iteration:contentdetail2}
+												<tr>
+													<td>
+														{$contentdetail2.Name}
+													</td>
+													<td>
+														{$contentdetail2.Subdetails.0.Value}
+														{option:contentdetail2.Subdetails.1}
+															- {$contentdetail2.Subdetails.1.Value}
+														{/option:contentdetail2.Subdetails.1}
+													</td>
+												</tr>
+											{/iteration:contentdetail2}
+										
+										
+										
+									</tbody>
+								</table>
+							</p>
+							<p></p>
+						{/option:contentdetail2}
+						
+						{option:contentdetail}
+							<h4>Voorzieningen</h4>
+							<p>
+								<ul class="list-fasc">
+									
+									{iteration:contentdetail}
+										<li>
+											<img src="/src/Frontend/Themes/Remico/Core/Layout/img/{$contentdetail.DetailId}.svg" alt="{$contentdetail.Name}" /> {$contentdetail.Name}
+										</li>
+									{/iteration:contentdetail}
 
-						<h4>Eigenschappen</h4>
-						<p>
-							<table style="width: 100%;">
-								<tbody>
-									<tr>
-										<td>
-											Garage</td>
-										<td>
-											2 meter</td>
-									</tr>
-									<tr>
-										<td>
-											Te</td>
-										<td>
-											200m2 tot 400m2</td>
-									</tr>
-									<tr>
-										<td>
-											Extra voorzieningen</td>
-										<td>
-											parking, keuken, sanitair, ...</td>
-									</tr>
-									<tr>
-										<td>
-											Tuin</td>
-										<td>
-											20m2</td>
-									</tr>
-								</tbody>
-							</table>
-						</p>
-						<p></p>
-						<h4>Voorzieningen</h4>
-						<p>
-							<ul class="list-fasc">
-								<li>
-									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/parking.svg" alt="parking" /> Parking
-								</li>
-								<li>
-									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/safe.svg" alt="Alarm" />Alarmsysteem
-								</li>
-								<li>
-									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/fire.svg" alt="Brandalarm" />Brandalarm
-								</li>
-								<li>
-									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/wifi.svg" alt="wifi" />Internet
-								</li>
-								<li>
-									<img src="/src/Frontend/Themes/Remico/Core/Layout/img/kitchen.svg" alt="keuken" />Keuken
-								</li>
-							</ul>
-						</p>
-						<p></p>
+									
+								</ul>
+							</p>
+							<p></p>
+						{/option:contentdetail}
+
+
 						<h4>Omschrijving</h4>
 						<p></p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum commodo leo eu ultrices. Nam lorem ante, consequat eu mauris et, faucibus placerat est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse id vulputate eros, sed scelerisque leo. Aenean tristique eget nunc eu consectetur. Nam tincidunt dictum nibh eget auctor. Aliquam erat volutpat.
+							{$content.Sms}
 						</p>
+						<p></p>
+					
+
+						<h4>Foto's</h4>
+						<p></p>
+							{option:content.Pictures}
+							<div class="img-box">
+								<div class="prev-img"></div>
+								<div class="next-img"></div>
+								<ul class="img-gallery">
+									{iteration:content.Pictures}
+										<li class="gallery-hide">
+											<img alt="{$content.Pictures.Description}" src="{$content.Pictures.UrlLarge}" />
+										</li>
+									{/iteration:content.Pictures}
+								</ul>
+							</div>
+
+							<ul class="bullimgs">
+										
+							</ul>
+							{/option:content.Pictures}
+						<p></p>
 						
 
-						<p></p>
+
 						<h4>Op de kaart!</h4>
 						<p>
 						</p>
 						<div class="overlay" onClick="style.pointerEvents='none'"></div>
-						<iframe class="maps-estate" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.073016243875!2d4.255672551850588!3d51.08865997946824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3ed456b6e0b2b%3A0x231e0170dc1c8d18!2sIndustrieweg+34%2C+2880+Bornem!5e0!3m2!1sen!2sbe!4v1459775674484" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe class="maps-estate" src="{$content.LinkVirtualVisit}" frameborder="0" style="border:0" allowfullscreen></iframe>
 						<p></p>
-
-
 
 						{option:contentChild}
 
-							<h4>{$content.Comments}</h4>
+							<h4>Units</h4>
 							<p>
 								<table style="width: 100%;" class="estate-table">
 									<tr>
@@ -176,16 +184,16 @@
 												</td>
 
 												<td>
-													{$content.MinArea}m<sup>2</sup> 
+													{$contentChild.MinArea}m<sup>2</sup> 
 												</td>
 
 												<td>
-													{$content.MaxArea}m<sup>2</sup>
+													{$contentChild.MaxArea}m<sup>2</sup>
 												</td>
 
 												<td>
-													{$content.Floor}
-												</td>
+													{$contentChild.Floor}
+ 												</td>
 
 											</tr>
 										{/iteration:contentChild}
@@ -195,6 +203,23 @@
 							<p></p>
 							
 						{/option:contentChild}
+
+
+						<h4 id="estate-form">Contacteer ons voor meer informatie</h4>
+							
+
+						{* Contact position *}
+						{option:positionContact}
+							{iteration:positionContact}
+							{option:!positionContact.blockIsHTML}
+								{$positionContact.blockContent}
+							{/option:!positionContact.blockIsHTML}
+							{option:positionContact.blockIsHTML}
+								{$positionContact.blockContent}
+							{/option:positionContact.blockIsHTML}
+							{/iteration:positionContact}
+						{/option:positionContact}
+						<p></p>
 
 						<h5>Deel deze pagina</h5>
 
@@ -238,19 +263,21 @@
 
 				</div>
 
-				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-					<div>
-						{* MainRight position *}
-						{option:positionMainRight}
-							{iteration:positionMainRight}
-							{option:!positionMainRight.blockIsHTML}
-								{$positionMainRight.blockContent}
-							{/option:!positionMainRight.blockIsHTML}
-							{option:positionMainRight.blockIsHTML}
-								{$positionMainRight.blockContent}
-							{/option:positionMainRight.blockIsHTML}
-							{/iteration:positionMainRight}
-						{/option:positionMainRight}
+				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3 agent-grid">
+					<div class="agent-wrap">
+						<div class="agent">
+							{* MainRight position *}
+							{option:positionMainRight}
+								{iteration:positionMainRight}
+								{option:!positionMainRight.blockIsHTML}
+									{$positionMainRight.blockContent}
+								{/option:!positionMainRight.blockIsHTML}
+								{option:positionMainRight.blockIsHTML}
+									{$positionMainRight.blockContent}
+								{/option:positionMainRight.blockIsHTML}
+								{/iteration:positionMainRight}
+							{/option:positionMainRight}
+						</div>
 						<div class="clear"></div>
 
 						
@@ -266,26 +293,3 @@
 	</div>	
 {/iteration:content}
 {/option:content}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

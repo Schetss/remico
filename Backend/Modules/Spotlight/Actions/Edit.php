@@ -58,6 +58,7 @@ class Edit extends ActionEdit
         $this->frm = new Form('edit');
 
         $this->frm->addText('title', $this->record['title'], null, 'inputText title', 'inputTextError title');
+        $this->frm->addImage('image');
         $this->frm->addText('id', $this->record['id']);
         $this->frm->addEditor('description', $this->record['description']);
 
@@ -115,6 +116,30 @@ class Edit extends ActionEdit
                 $item['language'] = Language::getWorkingLanguage();
 
                 $item['title'] = $fields['title']->getValue();
+
+                // the image path
+                $imagePath = FRONTEND_FILES_PATH . '/' . $this->getModule() . '/image';
+
+                // create folders if needed
+                if (!\SpoonDirectory::exists($imagePath . '/128x128')) {
+                    \SpoonDirectory::create($imagePath . '/128x128');
+                }
+                if (!\SpoonDirectory::exists($imagePath . '/800x600')) {
+                    \SpoonDirectory::create($imagePath . '/800x600');
+                }
+                if (!\SpoonDirectory::exists($imagePath . '/source')) {
+                    \SpoonDirectory::create($imagePath . '/source');
+                }
+
+                // image provided?
+                if ($fields['image']->isFilled()) {
+                    // build the image name
+                    $item['image'] = $this->meta->getUrl() . '.' . $fields['image']->getExtension();
+
+                    // upload the image & generate thumbnails
+                    $fields['image']->generateThumbnails($imagePath, $item['image']);
+                }
+                
                 $item['id'] = $fields['id']->getValue();
                 $item['description'] = $fields['description']->getValue();
                 $item['category_id'] = $this->frm->getField('category_id')->getValue();
