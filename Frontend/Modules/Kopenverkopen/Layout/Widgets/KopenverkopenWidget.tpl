@@ -14,7 +14,7 @@
 				<div class="cta-content">
 					<h3>{$widgetKopenVerkopen.title}</h3>
 					<p>{$widgetKopenVerkopen.subtitle}</p>
-					<div class="cta-more">Ontdek meer</div>
+					<div class="cta-more">Meer informatie</div>
 				</div>
 			</div>
 		</a>
