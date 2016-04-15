@@ -4,7 +4,7 @@
 		 	<div class="search-estate">
 			 	<div class="wrapper-inner">
 					<div class="grid estate">
-						<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
+						<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3 estate-picture">
 							<div class="img-holder showimg">
 								{option:estatelist.Pictures}
 									<div class="img-holder showimg">
@@ -23,14 +23,14 @@
 							</div>
 						</div>
 
-						<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
+						<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-2-3 grid-l-2-3 grid-content">
 								<h4>{$estatelist.Name}</h4>
 								
 								<div class="subtitle">
 									<p>
 										<!-- {$estatelist.Address1} {$estatelist.Number} {$estatelist.Box}- -->{$estatelist.Zip} {$estatelist.City}
 									</p>
-									<p>
+									<p class="estate-ref">
 										<span>REF</span> {$estatelist.EstateID} 
 									
 									</p>
@@ -50,12 +50,15 @@
 									<li>{iteration:estatelist.Purposes}{$estatelist.Purposes.Name}{/iteration:estatelist.Purposes}</li>
 									<li>{$estatelist.SubCategory}</li>
 								</ul>
+								<div class="clear"></div>
 
 								<div class="more-search"> meer info </div>
 						</div>
 						<div class="clear"></div>
 					</div>
+					<div class="clear"></div>
 				</div>
+				<div class="clear"></div>
 			</div>
 		</a>
 	    {/iteration:estatelist}

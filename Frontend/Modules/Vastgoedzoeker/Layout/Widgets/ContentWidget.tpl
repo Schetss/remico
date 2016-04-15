@@ -31,7 +31,7 @@
 				{/option:content.Pictures}
 				<div class="clear"></div>
 			</div>
-			<div class="searchSmallForm">
+			<div class="searchSmallForm estate-header">
 				
 
 				<div class="wrapper">
@@ -47,38 +47,38 @@
 		</div>
 	</div>
 
-<div class="estate-head">
-	<div class="wrapper">		
-		<div class="wrapper-inner estate-wrapper">
+	<div class="estate-head">
+		<div class="wrapper">		
+			<div class="wrapper-inner estate-wrapper">
 
-			<div class="grid block">
+				<div class="grid block">
 
-				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
-					<h4>{$content.Address1} {$content.Number}, {$content.Zip} {$content.City}</h4>
-					<p>{$content.Comments}</p>
-					<ul>
-						<li>{iteration:content.Purposes}{$content.Purposes.Name}{/iteration:content.Purposes}</li>
-						<li>{$content.SubCategory}</li>
-					</ul>
+					<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
+						<h4>{$content.Address1} {$content.Number}, {$content.Zip} {$content.City}</h4>
+						<p>{$content.Comments}</p>
+						<ul>
+							<li>{iteration:content.Purposes}{$content.Purposes.Name}{/iteration:content.Purposes}</li>
+							<li>{$content.SubCategory}</li>
+						</ul>
+					</div>
+
+					<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
+						<p class="ground"><span class="estate-size">{$content.MinArea}</span>m<sup>2</sup> - <span class="estate-size">{$content.MaxArea}</span>m<sup>2</sup></p>
+
+						<p class="ref"><span>REF</span> {$content.EstateID}</p>
+
+					</div>
+					<div class="clear"></div>
 				</div>
-
-				<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-					<p class="ground">{$content.MinArea}m<sup>2</sup> - {$content.MaxArea}m<sup>2</sup></p>
-
-					<p class="ref"><span>REF</span> {$content.EstateID}</p>
-
-				</div>
-				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-</div>
 
 
 	<div class="wrapper">		
 		<div class="wrapper-inner">
 			<div class="grid block">
-				<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 content-block-2-3">
+				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-2-3 grid-l-2-3 content-block-2-3">
 					<div class="editor-block">
 						{option:contentdetail2}
 							<h4>Eigenschappen</h4>
@@ -173,7 +173,7 @@
 										<th>Naam</th>
 										<th>Min. opp.</th>
 										<th>Max. opp.</th>
-										<th>Verdieping</th>
+										<!-- <th>Verdieping</th> -->
 									</tr>
 
 									<tbody>
@@ -190,10 +190,10 @@
 												<td>
 													{$contentChild.MaxArea}m<sup>2</sup>
 												</td>
-
+<!-- 
 												<td>
 													{$contentChild.Floor}
- 												</td>
+ 												</td> -->
 
 											</tr>
 										{/iteration:contentChild}

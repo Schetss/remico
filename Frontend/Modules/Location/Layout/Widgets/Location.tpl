@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="wrapper-inner">
-		<div class="grid block-title block">
+		<div class="grid block">
 			<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
 				<a href="tel:+3237714441">
 					<div class="contact-click">

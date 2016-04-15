@@ -9,14 +9,14 @@
 		<div class="wrapper-inner">
 			{iteration:items}
 				<div class="grid block">
-	    			<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
+	    			<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3 blog-image-block">
 						{option:items.image}
 							<a href="{$items.full_url}" title="{$items.title}"><img src="{$FRONTEND_FILES_URL}/blog/images/400x300/{$items.image}" alt="{$items.title}" /></a>
 
 						{/option:items.image}
 					</div>
 
-					<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3 grid-content">
+					<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-2-3 grid-l-2-3 grid-content">
 							<h5>{$items.title}</h5>
 							
 							<p class="blog-date">
