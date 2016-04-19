@@ -11,9 +11,9 @@
 			{iteration:widgetOverOns}
 				<div class="grid-item grid-xs-1-1 grid-s-1-2 grid-m-1-2 grid-l-1-2">
 
-					{option:widgetOverOns.image}
-						<img src="{$SITE_URL}/src/Frontend/Files/OverOns/image/800x600/{$widgetOverOns.image}" alt="{$widgetOverOns.title}" />	
-					{/option:widgetOverOns.image}
+					{option:!widgetOverOns.image}
+						<img onload="imgLoaded(this)" src="{$SITE_URL}/src/Frontend/Files/OverOns/image/800x600/{$widgetOverOns.image}" alt="{$widgetOverOns.title}" />	
+					{/option:!widgetOverOns.image}
 			
 			
 					<h5>{$widgetOverOns.title}</h5>	

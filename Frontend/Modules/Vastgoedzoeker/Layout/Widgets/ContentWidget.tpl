@@ -16,8 +16,7 @@
 		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=601278376597485";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-
-
+ 
 	<div class="searchSmall-wrapper estate-detail">
 		<div class="searchSmall">
 					
@@ -25,7 +24,7 @@
 				{option:content.Pictures}
 					{iteration:content.Pictures}
 						{option:content.Pictures.first}
-							<img alt="{$content.Pictures.Description}" src="{$content.Pictures.UrlLarge}" />
+							<img onload="imgLoaded(this)" alt="{$content.Pictures.Description}" src="{$content.Pictures.UrlLarge}" />
 						{/option:content.Pictures.first}
 					{/iteration:content.Pictures}
 				{/option:content.Pictures}
@@ -51,7 +50,7 @@
 		<div class="wrapper">		
 			<div class="wrapper-inner estate-wrapper">
 
-				<div class="grid block">
+				<div class="grid block3">
 
 					<div class="grid-item grid-xs-1-1 grid-s-2-3 grid-m-2-3 grid-l-2-3">
 						<h4>{$content.Address1} {$content.Number}, {$content.Zip} {$content.City}</h4>
@@ -207,7 +206,7 @@
 
 						<h4 id="estate-form">Contacteer ons voor meer informatie</h4>
 							
-
+						<p>
 						{* Contact position *}
 						{option:positionContact}
 							{iteration:positionContact}
@@ -219,6 +218,7 @@
 							{/option:positionContact.blockIsHTML}
 							{/iteration:positionContact}
 						{/option:positionContact}
+					</p>
 						<p></p>
 
 						<h5>Deel deze pagina</h5>

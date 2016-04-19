@@ -11,7 +11,7 @@
 				<div class="grid block">
 	    			<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3 blog-image-block">
 						{option:items.image}
-							<a href="{$items.full_url}" title="{$items.title}"><img src="{$FRONTEND_FILES_URL}/blog/images/400x300/{$items.image}" alt="{$items.title}" /></a>
+							<a href="{$items.full_url}" title="{$items.title}"><img onload="imgLoaded(this)" src="{$FRONTEND_FILES_URL}/blog/images/400x300/{$items.image}" alt="{$items.title}" /></a>
 
 						{/option:items.image}
 					</div>

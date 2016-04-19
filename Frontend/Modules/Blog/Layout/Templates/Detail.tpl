@@ -20,7 +20,7 @@
 	<div class="searchSmall">
 				
 		<div class="imageCarousel" data-scroll-speed="3">
-			{option:item.image}<img src="{$FRONTEND_FILES_URL}/blog/images/source/{$item.image}" alt="{$item.title}" itemprop="image" />{/option:item.image}
+			{option:item.image}<img onload="imgLoaded(this)" src="{$FRONTEND_FILES_URL}/blog/images/source/{$item.image}" alt="{$item.title}" itemprop="image" />{/option:item.image}
 			<div class="clear"></div>
 		</div>
 		<div class="searchSmallForm">
@@ -52,12 +52,12 @@
 					<div class="grid block">
 						{option:navigation.previous}
 							<div class="grid-item grid-xs-1-1 grid-s-1-2 grid-m-1-2 grid-l-1-2 blog-link blog-link-l">
-								<a href="{$navigation.previous.url}" rel="prev"><img alt="previous" src="/src/Frontend/Themes/Remico/Core/Layout/img/arrow-left.svg" /> {$navigation.previous.title|truncate:33}</a>
+								<a href="{$navigation.previous.url}" rel="prev"><img alt="previous" src="/src/Frontend/Themes/Remico/Core/Layout/img/arrow-left.svg" /> {$navigation.previous.title|truncate:25}</a>
 							</div>
 						{/option:navigation.previous}
 						{option:navigation.next}
 							<div class="grid-item grid-xs-1-1 grid-s-1-2 grid-m-1-2 grid-l-1-2  blog-link  blog-link-r">
-								<a class="blog-link" href="{$navigation.next.url}" rel="next">{$navigation.next.title|truncate:33}<img alt="previous" src="/src/Frontend/Themes/Remico/Core/Layout/img/arrow.svg" /> </a>
+								<a class="blog-link" href="{$navigation.next.url}" rel="next">{$navigation.next.title|truncate:25}<img alt="previous" src="/src/Frontend/Themes/Remico/Core/Layout/img/arrow.svg" /> </a>
 							</div>
 						{/option:navigation.next}
 					</div>

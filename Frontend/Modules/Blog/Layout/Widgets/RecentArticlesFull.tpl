@@ -11,7 +11,7 @@
 	    		<div class="grid block">
 	    			<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3  blog-image-block">
 						{option:widgetBlogRecentArticlesFull.image}
-							<a href="{$widgetBlogRecentArticlesFull.full_url}" title="{$widgetBlogRecentArticlesFull.title}"><img src="{$FRONTEND_FILES_URL}/blog/images/400x300/{$widgetBlogRecentArticlesFull.image}" alt="{$widgetBlogRecentArticlesFull.title}" /></a>
+							<a href="{$widgetBlogRecentArticlesFull.full_url}" title="{$widgetBlogRecentArticlesFull.title}"><img onload="imgLoaded(this)" src="{$FRONTEND_FILES_URL}/blog/images/400x300/{$widgetBlogRecentArticlesFull.image}" alt="{$widgetBlogRecentArticlesFull.title}" /></a>
 
 						{/option:widgetBlogRecentArticlesFull.image}
 					</div>
@@ -22,10 +22,7 @@
 							<p class="blog-date">
 								{$widgetBlogRecentArticlesFull.publish_on|date:{$dateFormatLong}:{$LANGUAGE}}
 							</p>
-
-							
 								{option:widgetBlogRecentArticlesFull.introduction}{$widgetBlogRecentArticlesFull.introduction}{/option:widgetBlogRecentArticlesFull.introduction}
-							
 							<p class="blue-link">
 								<a href="{$widgetBlogRecentArticlesFull.full_url}">Lees meer</a>
 							</p>

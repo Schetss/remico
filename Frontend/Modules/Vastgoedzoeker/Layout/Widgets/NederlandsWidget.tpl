@@ -10,7 +10,7 @@
 									<div class="img-holder showimg">
 								  		{iteration:estatelist.Pictures}
 								  			{option:estatelist.Pictures.first}
-						                		<img class="yesimg" alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
+						                		<img onload="imgLoaded(this)" class="yesimg" alt="{$estatelist.Pictures.Description}" src="{$estatelist.Pictures.UrlLarge}" />
 						                	{/option:estatelist.Pictures.first}
 					            		{/iteration:estatelist.Pictures}
 					            	</div>
