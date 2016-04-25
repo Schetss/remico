@@ -11,7 +11,9 @@
 
 			{option:!searchResults}
 				<div class="bd content no-results">
-					<p>{$msgSearchNoItems}</p>
+					<p class="blue-link">{$msgSearchNoItems} Ga naar onze pagina Kopen / Huren om panden te zoeken<br />
+					<a href="/nl/kopen-huren">Panden zoeken</a></p>
+					<div class="clear"></div>
 				</div>
 			{/option:!searchResults}
 

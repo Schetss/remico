@@ -102,18 +102,105 @@ class Model
     public static function getNed($Searchterm,$Genre,$BuyRent,$pageNumber)
     {
 
-       
-        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Page%22:" . $pageNumber . ",%22RowsPerPage%22:10,%22IsTopParent%22:true,%22Language%22:%22nl-BE%22}";
-        $jsonlist = @file_get_contents($url);
+    if($Searchterm !== "") 
+    {      
+        
+        if ( strlen($Searchterm) === 4){
+
+         
+            $jsonurl = "http://remico:8888/src/Frontend/Themes/Remico/Core/Js/cities.json";
+            // $jsonurllist = @file_get_contents($jsonurl);
 
 
-       if($jsonlist === FALSE) {
+            $ch = curl_init();
+            curl_setopt ($ch, CURLOPT_URL, $jsonurl);
+            curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+            $contents = curl_exec($ch);
+           
+            // if (curl_errno($ch)) {
+            //   echo curl_error($ch);
+            //   echo "\n<br />";
+            //   $contents = '';
+            // } 
+
+            // else {
+            //   curl_close($ch);
+            // }
+
+            // if (!is_string($contents) || !strlen($contents)) {
+            // echo "Failed to get contents.";
+            // $contents = '';
+            // }
+
+           
+
+            if($contents === FALSE) {
+             return array(0);
+            }
+
+            else {
+                $jsonurllistarray = json_decode($contents, true);
+                
+                $code = $Searchterm;
+                $region = "";
+                // $val = "name";
+
+                foreach ($jsonurllistarray as $key=>$val) 
+                {       
+                   
+                   // print_r($jsonurllistarray[$key]["name"]);
+                    $valu = $jsonurllistarray[$key]["name"];
+
+                    if(strpos($valu, $code) !== false){
+                       // $decode['d']['EstateList'][$key]['SubCategory'] = $replacement;
+                        $regione = $jsonurllistarray[$key]["regioid"];
+                        // print_r($regiones);
+                        
+
+                        $regiones = "%22RegionIDList%22:[%22" . $regione . "%22],";
+                         break;
+                    }   
+                    
+                    else {
+                         $regiones = "%22RegionIDList%22:[%220%22],";
+                    }
+
+                }
+            }
+        }
+        else {
+             $regiones = "%22RegionIDList%22:[%220%22],";
+        }
+    }
+
+    else {
+        $regiones = "";
+    }
+
+      
+
+
+        
+    $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $regiones . $Genre . $BuyRent. "%22Page%22:" . $pageNumber . ",%22RowsPerPage%22:10,%22IsTopParent%22:true,%22Language%22:%22nl-BE%22}";
+    // $jsonlist = @file_get_contents($url);
+        
+        // print_r($url);
+
+     $ch = curl_init();
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+    $contents = curl_exec($ch);
+
+
+       if($contents === FALSE) {
          return array(0);
        }
 
         
        else {
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
           
 
             $word = "kantoren & magazijn";
@@ -135,27 +222,93 @@ class Model
 
             return $decode1;
 
+            // print_r($decode1);   
 
-            // print_r($decode1);
-
-            
         }
-       
     }
 
     public static function getCount($Searchterm,$Genre,$BuyRent,$pageNumber)
     {
-        $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $Searchterm . $Genre . $BuyRent. "%22Language%22:%22nl-BE%22,%22IsTopParent%22:true}";
-        $jsonlist = @file_get_contents($url);
+        if($Searchterm !== "") 
+    {      
+        
+        if ( strlen($Searchterm) === 4){
+
+         
+            $jsonurl = "http://remico:8888/src/Frontend/Themes/Remico/Core/Js/cities.json";
+            // $jsonurllist = @file_get_contents($jsonurl);
+
+            $che = curl_init();
+            curl_setopt ($che, CURLOPT_URL, $jsonurl);
+            curl_setopt ($che, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt ($che, CURLOPT_RETURNTRANSFER, true);
+            $contents2 = curl_exec($che);
+           
+
+            if($contents2 === FALSE) {
+             return array(0);
+            }
+
+            else {
+                $jsonurllistarray = json_decode($contents2, true);
+                
+                $code = $Searchterm;
+                $region = "";
+                // $val = "name";
+
+                foreach ($jsonurllistarray as $key=>$val) 
+                {       
+                   
+                   // print_r($jsonurllistarray[$key]["name"]);
+                    $valu = $jsonurllistarray[$key]["name"];
+
+                    if(strpos($valu, $code) !== false){
+                       // $decode['d']['EstateList'][$key]['SubCategory'] = $replacement;
+                        $regione = $jsonurllistarray[$key]["regioid"];
+                        // print_r($regiones);
+                        
+
+                        $regiones = "%22RegionIDList%22:[%22" . $regione . "%22],";
+                         break;
+                    }   
+                    
+                    else {
+                         $regiones = "%22RegionIDList%22:[%220%22],";
+                    }
+
+                }
+            }
+        }
+        else {
+             $regiones = "%22RegionIDList%22:[%220%22],";
+        }
+    }
+
+    else {
+        $regiones = "";
+    }
+
+      
 
 
-        if($jsonlist === FALSE){
+        
+    $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22," . $regiones . $Genre . $BuyRent. "%22IsTopParent%22:true,%22Language%22:%22nl-BE%22}";
+    // $jsonlist = @file_get_contents($url);
+
+    $ch = curl_init();
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+    $contents = curl_exec($ch);
+
+
+        if($contents === FALSE){
             return array(0);
         }
 
         else 
         {
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
             $decode2 = $decode['d']['EstateList'];
             $totaldecode = count($decode2);
             $paginationnumber = ceil($totaldecode/10);
@@ -209,15 +362,21 @@ class Model
     public static function getContent($ref)
     {
         $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22ShowDetails%22:1,%22EstateID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
-        $jsonlist = @file_get_contents($url);
+        // $jsonlist = @file_get_contents($url);
 
-        if($jsonlist === FALSE){
+        $ch = curl_init();
+        curl_setopt ($ch, CURLOPT_URL, $url);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+        $contents = curl_exec($ch);
+
+        if($contents === FALSE){
             return array(0);
         }
 
         else 
         {
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
 
             
             $word = "kantoren & magazijn";
@@ -243,14 +402,21 @@ class Model
     public static function getContentChild($ref)
     {
         $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22ParentID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
-        $jsonlist = @file_get_contents($url);
+        // $jsonlist = @file_get_contents($url);
 
-        if($jsonlist === FALSE){
+
+        $ch = curl_init();
+        curl_setopt ($ch, CURLOPT_URL, $url);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+        $contents = curl_exec($ch);
+
+        if($contents === FALSE){
             return array(0);
         }
         
         else {
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
 
             return $decode;
         }
@@ -260,15 +426,22 @@ class Model
     public static function getDetailsE($ref)
     {
         $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22ShowDetails%22:1,%22EstateID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
-        $jsonlist = @file_get_contents($url);
+        // $jsonlist = @file_get_contents($url);
 
-        if($jsonlist === FALSE){
+
+        $ch = curl_init();
+        curl_setopt ($ch, CURLOPT_URL, $url);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+        $contents = curl_exec($ch);
+
+        if($contents === FALSE){
             return array(0);
         }
         
         else {
 
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
 
 
             if( empty( $decode["d"]["EstateList"]["0"]["Details"] ) )
@@ -300,15 +473,21 @@ class Model
     public static function getDetailsV($ref)
     {
         $url = "http://webservices.whoman2.be/websiteservices/EstateService.svc/GetEstateList?EstateServiceGetEstateListRequest={%22ClientId%22:%222d01f903c8c94c0c8aaa%22,%22ShowDetails%22:1,%22EstateID%22:" . $ref . ",%22Language%22:%22nl-BE%22}";
-        $jsonlist = @file_get_contents($url);
+        // $jsonlist = @file_get_contents($url);
 
-        if($jsonlist === FALSE){
+        $ch = curl_init();
+        curl_setopt ($ch, CURLOPT_URL, $url);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+        $contents = curl_exec($ch);
+
+        if($contents === FALSE){
             return array(0);
         }
         
         else {
 
-            $decode = json_decode($jsonlist, true);
+            $decode = json_decode($contents, true);
 
 
             if( empty( $decode["d"]["EstateList"]["0"]["Details"] ) )
@@ -342,8 +521,10 @@ class Model
 
                     $naam1 = "vrije hoogte";
                     $naam2 = "draagkracht & belasting";
+                    $naam3 = "poorten (gelijkvloers)";
                     $add1 = "m";
                     $add2 = " (T/m<sup>2</sup>)";
+                    $add3 = "m (aantal - hoogte)";
                     $v = "Value";
 
                   
@@ -357,6 +538,10 @@ class Model
 
                          else if ($v["Name"] == $naam2){
                             $decode2[$key2]["Subdetails"]["0"]["Value"] = $decode2[$key2]["Subdetails"]["0"]["Value"] . $add2;
+                         }
+
+                         else if ($v["Name"] == $naam3){
+                            $decode2[$key2]["Subdetails"]["1"]["Value"] = $decode2[$key2]["Subdetails"]["1"]["Value"] . $add3;
                          }
                     }
 

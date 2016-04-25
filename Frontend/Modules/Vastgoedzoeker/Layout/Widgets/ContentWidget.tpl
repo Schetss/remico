@@ -61,8 +61,16 @@
 						</ul>
 					</div>
 
+
 					<div class="grid-item grid-xs-1-1 grid-s-1-3 grid-m-1-3 grid-l-1-3">
-						<p class="ground"><span class="estate-size">{$content.MinArea}</span>m<sup>2</sup> - <span class="estate-size">{$content.MaxArea}</span>m<sup>2</sup></p>
+						<p class="ground">
+							{option:content.MinArea}
+								<span class="estate-size">{$content.MinArea}</span>m<sup>2</sup> - <span class="estate-size">{$content.MaxArea}</span>m<sup>2</sup>
+							{/option:content.MinArea}
+							{option:!content.MinArea}
+								Oppervlakte op aanvraag
+							{/option:!content.MinArea}
+						</p>
 
 						<p class="ref"><span>REF</span> {$content.EstateID}</p>
 
@@ -78,38 +86,34 @@
 		<div class="wrapper-inner">
 			<div class="grid block">
 				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-2-3 grid-l-2-3 content-block-2-3">
-					<div class="editor-block">
+					<div class="editor-block estate-editor-block">
 						{option:contentdetail2}
 							<h4>Eigenschappen</h4>
-							<p>
 								<table style="width: 100%;" class="e-table">
 									<tbody>
 										
-											{iteration:contentdetail2}
-												<tr>
-													<td>
-														{$contentdetail2.Name}
-													</td>
-													<td>
-														{$contentdetail2.Subdetails.0.Value}
-														{option:contentdetail2.Subdetails.1}
-															- {$contentdetail2.Subdetails.1.Value}
-														{/option:contentdetail2.Subdetails.1}
-													</td>
-												</tr>
-											{/iteration:contentdetail2}
+									{iteration:contentdetail2}
+										<tr>
+											<td>
+												{$contentdetail2.Name}
+											</td>
+											<td>
+												{$contentdetail2.Subdetails.0.Value}
+												{option:contentdetail2.Subdetails.1}
+													- {$contentdetail2.Subdetails.1.Value}
+												{/option:contentdetail2.Subdetails.1}
+											</td>
+										</tr>
+									{/iteration:contentdetail2}
 										
 										
 										
 									</tbody>
 								</table>
-							</p>
-							<p></p>
 						{/option:contentdetail2}
 						
 						{option:contentdetail}
 							<h4>Voorzieningen</h4>
-							<p>
 								<ul class="list-fasc">
 									
 									{iteration:contentdetail}
@@ -120,21 +124,15 @@
 
 									
 								</ul>
-							</p>
-							<p></p>
 						{/option:contentdetail}
 
 
 						<h4>Omschrijving</h4>
-						<p></p>
 						<p>
 							{$content.Sms}
 						</p>
-						<p></p>
-					
 
 						<h4>Foto's</h4>
-						<p></p>
 							{option:content.Pictures}
 							<div class="img-box">
 								<div class="prev-img"></div>
@@ -152,21 +150,16 @@
 										
 							</ul>
 							{/option:content.Pictures}
-						<p></p>
 						
 
 
 						<h4>Op de kaart!</h4>
-						<p>
-						</p>
-						<div class="overlay" onClick="style.pointerEvents='none'"></div>
+												<div class="overlay" onClick="style.pointerEvents='none'"></div>
 						<iframe class="maps-estate" src="{$content.LinkVirtualVisit}" frameborder="0" style="border:0" allowfullscreen></iframe>
-						<p></p>
 
 						{option:contentChild}
 
 							<h4>Units</h4>
-							<p>
 								<table style="width: 100%;" class="estate-table">
 									<tr>
 										<th>Naam</th>
@@ -198,15 +191,13 @@
 										{/iteration:contentChild}
 									</tbody>
 								</table>
-							</p>
-							<p></p>
+							
 							
 						{/option:contentChild}
 
 
 						<h4 id="estate-form">Contacteer ons voor meer informatie</h4>
 							
-						<p>
 						{* Contact position *}
 						{option:positionContact}
 							{iteration:positionContact}
@@ -218,10 +209,9 @@
 							{/option:positionContact.blockIsHTML}
 							{/iteration:positionContact}
 						{/option:positionContact}
-					</p>
-						<p></p>
+	
 
-						<h5>Deel deze pagina</h5>
+						<h4>Deel deze pagina</h4>
 
 
 					</div>

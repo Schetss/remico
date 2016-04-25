@@ -71,34 +71,28 @@ class NederlandsWidget extends FrontendBaseWidget
        $pageurl1 = $_SERVER['REQUEST_URI'];
 
 
-        if (isset($_GET['Text']) && $_GET['Text'] != '') {
+       if (isset($_GET['Text']) && $_GET['Text'] != '') {
             $Searchterm2 = htmlspecialchars($_GET['Text']);
             // preg_match_all('!\d+!', $Searchterm2, $matches);    
             
        
             if (preg_match('/[0-9]/', $Searchterm2))
             {
-               $Searchterm3 = preg_replace('/[0-9]+/', '', $Searchterm2);
+               preg_match_all('!\d+!', $Searchterm2, $matches);
 
-               $Searchterm4 = trim($Searchterm3);
-
-               $Searchterm5 = str_replace(' ', '%20', $Searchterm4);
-
-               $Searchterm = '%22City%22:%22' . $Searchterm5 . '%22,';
+                $Searchterm = implode(' ', $matches[0]);
+                // print_r($var);
             }
 
             else {
-                $SearchtermA = trim($Searchterm2);
-
-                $SearchtermB = str_replace(' ', '%20', $SearchtermA);
-
-                $Searchterm = '%22City%22:%22' . $SearchtermB . '%22,';
+                $Searchterm = '';
             }   
         }
 
         else {
             $Searchterm = '';
         }
+
 
 
 
@@ -168,11 +162,13 @@ class NederlandsWidget extends FrontendBaseWidget
         }
 
 
-        // print_r($PageNumber);
+        //   print_r($Searchterm);
         
         $this->list = FrontendVastgoedzoekerModel::getNed($Searchterm,$Genre,$BuyRent,$PageNumber);
         $this->count = FrontendVastgoedzoekerModel::getCount($Searchterm,$Genre,$BuyRent,$PageNumber);
         $catch = array(0);
+
+        // print_r($Searchterm);
 
         $this->tpl->assign('estate', (array)$this->list);
        
