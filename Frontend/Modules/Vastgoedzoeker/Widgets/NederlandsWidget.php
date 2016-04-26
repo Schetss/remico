@@ -168,7 +168,7 @@ class NederlandsWidget extends FrontendBaseWidget
         $this->count = FrontendVastgoedzoekerModel::getCount($Searchterm,$Genre,$BuyRent,$PageNumber);
         $catch = array(0);
 
-        // print_r($Searchterm);
+        // print_r( $this->list);
 
         $this->tpl->assign('estate', (array)$this->list);
        

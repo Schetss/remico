@@ -15,7 +15,7 @@
 				</div>
 				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3">
 					<div class="makelaar-img">
-						<img alt="{$widgetLiesbeth.name}" src="/src/Frontend/Files/Makelaars/Image/400x400/{$widgetLiesbeth.image}" />
+						<img alt="{$widgetLiesbeth.name}" src="/src/Frontend/Files/Makelaars/image/400x400/{$widgetLiesbeth.image}" />
 					</div>
 				</div>
 				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-2-3 grid-l-2-3 makelaar-desc">

@@ -17,7 +17,7 @@
 						 		{/option:estatelist.Pictures} 
 						 		{option:!estatelist.Pictures}
 							 		<div class="img-holder hideimg">
-							 			<img class="noimg" alt="no image" src="/src/Frontend/Themes/Remico/Core/Layout/img/image.svg" />
+							 			<img onload="imgLoaded(this)" class="noimg" alt="no image" src="/src/Frontend/Themes/Remico/Core/Layout/img/image.svg" />
 							 		</div>
 						 		{/option:!estatelist.Pictures} 
 							</div>
@@ -101,7 +101,36 @@
 				<div class="clear"></div>
 			</div>
 		</div>
+
+
+		
+
+
 	{/option:estatecount}
+
+	{option:estatelist}
+		<div class="wrapper-inner">
+			<div class="grid block">
+				<div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1">
+					
+					{* Form position *}
+						{option:positionForm}
+							{iteration:positionForm}
+							{option:!positionForm.blockIsHTML}
+								{$positionForm.blockContent}
+							{/option:!positionForm.blockIsHTML}
+							{option:positionForm.blockIsHTML}
+								{$positionForm.blockContent}
+							{/option:positionForm.blockIsHTML}
+							{/iteration:positionForm}
+						{/option:positionForm}
+
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	{/option:estatelist}
 
 
 	{option:!estatelist}

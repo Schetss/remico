@@ -5,7 +5,7 @@
 	
 
 	<div class="wrapper-inner">
-		<div class="grid block-title block">
+		<div class="grid block-title block3">
 				{option:successMessage}
 					<div id="{$formName}" class="message success contact-success">
 						<header>

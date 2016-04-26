@@ -108,7 +108,7 @@ class Model
         if ( strlen($Searchterm) === 4){
 
          
-            $jsonurl = "http://remico:8888/src/Frontend/Themes/Remico/Core/Js/cities.json";
+            $jsonurl = "http://test.schetss.be/src/Frontend/Themes/Remico/Core/Js/cities.json";
             // $jsonurllist = @file_get_contents($jsonurl);
 
 
@@ -235,7 +235,7 @@ class Model
         if ( strlen($Searchterm) === 4){
 
          
-            $jsonurl = "http://remico:8888/src/Frontend/Themes/Remico/Core/Js/cities.json";
+            $jsonurl = "http://test.schetss.be/src/Frontend/Themes/Remico/Core/Js/cities.json";
             // $jsonurllist = @file_get_contents($jsonurl);
 
             $che = curl_init();
@@ -540,7 +540,7 @@ class Model
                             $decode2[$key2]["Subdetails"]["0"]["Value"] = $decode2[$key2]["Subdetails"]["0"]["Value"] . $add2;
                          }
 
-                         else if ($v["Name"] == $naam3){
+                         else if ($v["Name"] == $naam3 && isset($decode2[$key2]["Subdetails"]["1"])){
                             $decode2[$key2]["Subdetails"]["1"]["Value"] = $decode2[$key2]["Subdetails"]["1"]["Value"] . $add3;
                          }
                     }
